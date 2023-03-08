@@ -1,1 +1,0 @@
-git submodule add https://github.com/thzero/rocket_sidekick-client-%1 "%1"
