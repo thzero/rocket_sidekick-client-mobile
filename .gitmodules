@@ -19,9 +19,9 @@
 [submodule "src/utility"]
 	path = src/utility
 	url = https://github.com/thzero/rocket_sidekick-client-utility
-[submodule "images"]
-	path = images
-	url = https://github.com/thzero/rocket_sidekick-client-images
 [submodule "public"]
 	path = public
 	url = https://github.com/thzero/rocket_sidekick-client-public
+[submodule "images"]
+	path = images
+	url = https://github.com/thzero/rocket_sidekick-client-images
