@@ -1,6 +1,6 @@
 {
-  "appId": "com.thzero.rocketsidekick",
-  "appName": "RocketSidekick",
+  "appId": "com.rocketsidekick",
+  "appName": "Rocket Sidekick",
   "webDir": "dist",
   "bundledWebRuntime": false,
   "server": {

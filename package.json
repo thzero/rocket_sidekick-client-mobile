@@ -18,12 +18,12 @@
     "url": "https://github.com/thzero/rocket_sidekick-client-mobile/issues"
   },
   "scripts": {
-    "dev": "vite",
-    "dev2": "vite --host 0.0.0.0",
-    "build": "vite build",
+    "dev": "vite --host 0.0.0.0",
+    "build": "./build.sh",
     "preview": "vite preview"
   },
   "dependencies": {
+    "@capacitor/android": "^4.7.0",
     "@capacitor/core": "^4.7.0",
     "@capacitor/network": "^4.1.0",
     "@capacitor/splash-screen": "^4.2.0",

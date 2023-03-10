@@ -1,0 +1,6 @@
+{
+  "appId": "com.rocketsidekick",
+  "appName": "Rocket Sidekick",
+  "webDir": "dist",
+  "bundledWebRuntime": false
+}

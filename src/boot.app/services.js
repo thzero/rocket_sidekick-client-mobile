@@ -1,4 +1,4 @@
-import restCommunicationService from '@thzero/library_client_service_rest_fetch';
+import restCommunicationService from '@/service.app/interceptor';
 
 import BaseServiceBoot from '@/boot/services';
 
