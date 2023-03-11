@@ -1,5 +1,6 @@
 import AppConstants from '@/utility/constants';
 
+import featuresService from '@/service/features';
 import restCommunicationService from '@/service.app/interceptor';
 
 import restCommunicationServiceSecondary from '@thzero/library_client_service_rest_fetch';
@@ -15,6 +16,10 @@ class AppServiceBoot extends BaseServiceBoot {
 
 	_initializeCommunicationRest() {
 		return new restCommunicationService();
+	}
+
+	_initializeFeatures() {
+		return new featuresService();
 	}
 }
 

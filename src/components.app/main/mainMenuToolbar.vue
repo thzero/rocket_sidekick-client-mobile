@@ -89,8 +89,6 @@
 import { useBaseMenuComponent } from '@/components/main/baseMenu';
 import { baseBaseMenuProps } from '@/components/main/baseBaseMenuProps';
 
-import AppConstants from '@/utility/constants';
-
 export default {
 	name: 'ManuMenu',
 	props: {
@@ -109,9 +107,7 @@ export default {
 			success,
 			contentLink,
 			contentTitle
-		} = useBaseMenuComponent(props, context, {
-			features: AppConstants.Features
-		});
+		} = useBaseMenuComponent(props, context);
 
 		return {
 			correlationId,

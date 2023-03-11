@@ -119,9 +119,7 @@ export default {
 			success,
 			contentLink,
 			contentTitle
-		} = useBaseMenuComponent(props, context, {
-			features: AppConstants.Features
-		});
+		} = useBaseMenuComponent(props, context);
 
 		return {
 			correlationId,
