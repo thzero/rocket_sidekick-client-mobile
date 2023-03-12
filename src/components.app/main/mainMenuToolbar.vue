@@ -83,9 +83,20 @@
 	>
 		{{ $t('menu.content.links.title') }}
 	</v-btn>
+	<v-btn
+		v-if="$vuetify.display.mdAndUp"
+		:href="websiteUrl"
+		target="_blank"
+	>
+		{{ $t('menu.content.website') }}
+	</v-btn>
 </template>
 
 <script>
+import { ref } from 'vue';
+
+import AppConstants from '@/utility/constants';
+
 import { useBaseMenuComponent } from '@/components/main/baseMenu';
 import { baseBaseMenuProps } from '@/components/main/baseBaseMenuProps';
 
@@ -109,6 +120,8 @@ export default {
 			contentTitle
 		} = useBaseMenuComponent(props, context);
 
+		const websiteUrl = ref(AppConstants.External.url);
+
 		return {
 			correlationId,
 			error,
@@ -120,7 +133,8 @@ export default {
 			notImplementedError,
 			success,
 			contentLink,
-			contentTitle
+			contentTitle,
+			websiteUrl
 		};
 	}
 };

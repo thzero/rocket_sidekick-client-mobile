@@ -1,6 +1,6 @@
 import AppConstants from '@/utility/constants';
 
-import featuresService from '@/service/features';
+import featuresService from '@/service.app/features';
 import restCommunicationService from '@/service.app/interceptor';
 import newsService from '@/service.app/news';
 import userService from '@/service.app/user';

@@ -87,19 +87,21 @@
 			</v-list>
 		</v-list-item> -->
 		<v-list-item
-			v-if="features.MobileApp"
-			to="/landing"
+			:href="websiteUrl"
+			target="_blank"
 		>
-			<v-list-item-title>{{ $t('menu.content.app') }}</v-list-item-title>
+			<v-list-item-title>{{ $t('menu.content.website') }}</v-list-item-title>
 		</v-list-item>
 	</v-list>
 </template>
 
 <script>
-import { useBaseMenuComponent } from '@/components/main/baseMenu';
-import { baseBaseMenuProps } from '@/components/main/baseBaseMenuProps';
+import { ref } from 'vue';
 
 import AppConstants from '@/utility/constants';
+
+import { useBaseMenuComponent } from '@/components/main/baseMenu';
+import { baseBaseMenuProps } from '@/components/main/baseBaseMenuProps';
 
 export default {
 	name: 'MainMenuDrawer',
@@ -121,6 +123,8 @@ export default {
 			contentTitle
 		} = useBaseMenuComponent(props, context);
 
+		const websiteUrl = ref(AppConstants.External.url);
+
 		return {
 			correlationId,
 			error,
@@ -132,7 +136,8 @@ export default {
 			notImplementedError,
 			success,
 			contentLink,
-			contentTitle
+			contentTitle,
+			websiteUrl
 		};
 	}
 };
