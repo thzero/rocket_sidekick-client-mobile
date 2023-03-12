@@ -295,6 +295,6 @@ export default defineConfig({optimizeDeps: {
     ],
   },
   server: {
-    port: 3000,
+    port: 3001,
   },
 })
