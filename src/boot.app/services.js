@@ -2,6 +2,10 @@ import AppConstants from '@/utility/constants';
 
 import featuresService from '@/service/features';
 import restCommunicationService from '@/service.app/interceptor';
+import newsService from '@/service.app/news';
+import userService from '@/service.app/user';
+import utilityService from '@/service.app/utility';
+import versionService from '@/service.app/version';
 
 import restCommunicationServiceSecondary from '@thzero/library_client_service_rest_fetch';
 
@@ -20,6 +24,22 @@ class AppServiceBoot extends BaseServiceBoot {
 
 	_initializeFeatures() {
 		return new featuresService();
+	}
+
+	_initializeNews() {
+		return new newsService();
+	}
+
+	_initializeUser() {
+		return new userService();
+	}
+
+	_initializeUtility() {
+		return new utilityService();
+	}
+
+	_initializeVersion() {
+		return new versionService();
 	}
 }
 

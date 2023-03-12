@@ -27,6 +27,5 @@ import start from '@thzero/library_client_vue3/boot/main';
 
 import App from '@/components/App.vue';
 
-
 //start(App, router, store, [ booti18n, bootEventBus, bootNetwork, bootServices, bootValidate, bootUi, bootCookieComply ], bootStarter, {});
 start(App, router, store, [ booti18n, bootEventBus, bootNetwork, bootServices, bootValidate, bootUi ], bootStarter, {});
