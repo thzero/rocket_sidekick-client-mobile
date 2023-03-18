@@ -1,5 +1,7 @@
 import AppConstants from '@/utility/constants';
 
+import databaseService from '@/service.app/database/implementation/sqlite/index';
+import manufacturersDatabaseService from '@/service.app/database/implementation/sqlite/manufacturers';
 import featuresService from '@/service.app/features';
 import restCommunicationService from '@/service.app/interceptor';
 import newsService from '@/service.app/news';
@@ -14,6 +16,9 @@ import BaseServiceBoot from '@/boot/services';
 class AppServiceBoot extends BaseServiceBoot {
 	_initialize() {
 		super._initialize();
+
+		this._injectService(AppConstants.InjectorKeys.SERVICE_DATABASE, new databaseService());
+		this._injectService(AppConstants.InjectorKeys.SERVICE_DATABASE_MANUFACTURERS, new manufacturersDatabaseService());
 
 		this._injectService(AppConstants.InjectorKeys.SERVICE_REST_COMMUNICATION_SECONDARY, new restCommunicationServiceSecondary());
 	}

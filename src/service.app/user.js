@@ -1,6 +1,25 @@
 import UserService from '@/service/user';
 
-class AppUserService extends UserService {
+class MobileUserService extends UserService {
+	async _fetchByGamerIdCommunication(correlationId, gamerId) {
+		return super._fetchByGamerIdCommunication(correlationId, gamerId);
+	}
+
+	async _fetchByGamerTag(correlationId, gamerTag) {
+		return super._fetchByGamerTag(correlationId, gamerId);
+	}
+
+	async _refreshSettingsCommunication(correlationId, user) {
+		return super._refreshSettingsCommunication(correlationId, user);
+	}
+
+	async _updateExternalCommunication(correlationId, user) {
+		return super._updateExternalCommunication(correlationId, user);
+	}
+
+	async _updateSettingsCommunications(correlationId, user, settings) {
+		return super._updateSettingsCommunications(correlationId, user, settings);
+	}
 }
 
-export default AppUserService;
+export default MobileUserService;

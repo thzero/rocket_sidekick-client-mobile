@@ -3,6 +3,14 @@
   "appName": "Rocket Sidekick",
   "webDir": "dist",
   "bundledWebRuntime": false,
+  "plugins": {
+    "CapacitorSQLite": {
+      "iosDatabaseLocation": "Library/database",
+      "iosIsEncryption": false,
+      "iosKeychainPrefix": "cap",
+      "androidIsEncryption": false,
+    }
+  },
   "server": {
     "url": "http://192.168.3.12:3001",
     "cleartext": true

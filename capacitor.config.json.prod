@@ -2,5 +2,13 @@
   "appId": "com.rocketsidekick",
   "appName": "Rocket Sidekick",
   "webDir": "dist",
-  "bundledWebRuntime": false
+  "bundledWebRuntime": false,
+  "plugins": {
+    "CapacitorSQLite": {
+      "capConnectionOptions": {
+        "database": "rocketsidekick"
+      },
+      "iosDatabaseLocation": "Library/rocketsidekick"
+    }
+  }
 }

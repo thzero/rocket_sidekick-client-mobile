@@ -1,6 +1,6 @@
 import FeaturesService from '@/service/features';
 
-class AppFeatureService extends FeaturesService {
+class MobileFeatureService extends FeaturesService {
 	features() {
 		const features = super.features();
 		features.CookieComply = false;
@@ -10,4 +10,4 @@ class AppFeatureService extends FeaturesService {
 	}
 }
 
-export default AppFeatureService;
+export default MobileFeatureService;
