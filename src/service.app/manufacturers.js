@@ -1,5 +1,4 @@
-import AppConstants from '@/utility/constants';
-import LibraryClientConstants from '@thzero/library_client/constants.js';
+import AppConstants from '@/constants';
 
 import LibraryClientUtility from '@thzero/library_client/utility/index';
 
@@ -23,7 +22,7 @@ class MobileManufacturersService extends ManufacturersService {
 			return super._listingCommunication(correlationId, params);
 
 		const response = this._serviceDatabase.manufacturers(correlationId, params);
-		this._logger.debug('ManufacturersService', '_listingCommunication', 'response', response, correlationId);
+		this._logger.debug('MobileManufacturersService', '_listingCommunication', 'response', response, correlationId);
 		return response;
 	}
 
@@ -32,7 +31,7 @@ class MobileManufacturersService extends ManufacturersService {
 			return super._retrieveCommunication(correlationId, params);
 
 		const response = this._serviceDatabase.manufacturers(correlationId, params);
-		this._logger.debug('ManufacturersService', '_listingCommunication', 'response', response, correlationId);
+		this._logger.debug('MobileManufacturersService', '_listingCommunication', 'response', response, correlationId);
 		return response;
 	}
 }

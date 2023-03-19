@@ -98,7 +98,7 @@
 <script>
 import { ref } from 'vue';
 
-import AppConstants from '@/utility/constants';
+import AppSharedConstants from '@/utility/constants';
 
 import { useBaseMenuComponent } from '@/components/main/baseMenu';
 import { baseBaseMenuProps } from '@/components/main/baseBaseMenuProps';
@@ -123,7 +123,7 @@ export default {
 			contentTitle
 		} = useBaseMenuComponent(props, context);
 
-		const websiteUrl = ref(AppConstants.External.url);
+		const websiteUrl = ref(AppSharedConstants.External.url);
 
 		return {
 			correlationId,

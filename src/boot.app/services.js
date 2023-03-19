@@ -1,8 +1,12 @@
-import AppConstants from '@/utility/constants';
+import AppConstants from '@/constants';
 
 import databaseService from '@/service.app/database/implementation/sqlite/index';
 import manufacturersDatabaseService from '@/service.app/database/implementation/sqlite/manufacturers';
+import partsDatabaseService from '@/service.app/database/implementation/sqlite/parts';
 import featuresService from '@/service.app/features';
+import manufacturersService from '@/service.app/manufacturers';
+import partsService from '@/service.app/parts';
+import rocketsService from '@/service.app/rockets';
 import restCommunicationService from '@/service.app/interceptor';
 import newsService from '@/service.app/news';
 import userService from '@/service.app/user';
@@ -19,6 +23,7 @@ class AppServiceBoot extends BaseServiceBoot {
 
 		this._injectService(AppConstants.InjectorKeys.SERVICE_DATABASE, new databaseService());
 		this._injectService(AppConstants.InjectorKeys.SERVICE_DATABASE_MANUFACTURERS, new manufacturersDatabaseService());
+		this._injectService(AppConstants.InjectorKeys.SERVICE_DATABASE_PARTS, new partsDatabaseService());
 
 		this._injectService(AppConstants.InjectorKeys.SERVICE_REST_COMMUNICATION_SECONDARY, new restCommunicationServiceSecondary());
 	}
@@ -33,6 +38,18 @@ class AppServiceBoot extends BaseServiceBoot {
 
 	_initializeNews() {
 		return new newsService();
+	}
+
+	_initializeManufacturers() {
+		return new manufacturersService();
+	}
+
+	_initializeParts() {
+		return new partsService();
+	}
+
+	_initializeRockets() {
+		return new rocketsService();
 	}
 
 	_initializeUser() {
