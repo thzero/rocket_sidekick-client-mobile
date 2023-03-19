@@ -12,11 +12,11 @@ class ManufacturersDatabaseService extends BaseManufacturersDatabaseService {
 	}
 
 	async manufacturer(correlationId, id) {
-		return this._serviceDatabase.selectById(correlationId, ManufacturersDatabaseService.TableNameManufacturers, id);
+		return this._serviceDatabase.selectJsonById(correlationId, ManufacturersDatabaseService.TableNameManufacturers, id);
 	}
 
 	async manufacturers(correlationId, params) {
-		return this._serviceDatabase.select(correlationId, ManufacturersDatabaseService.TableNameManufacturers, '*');
+		return this._serviceDatabase.selectJson(correlationId, ManufacturersDatabaseService.TableNameManufacturers, '*');
 	}
 
 	async manufacturersClear(correlationId) {

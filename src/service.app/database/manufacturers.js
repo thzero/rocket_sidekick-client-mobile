@@ -99,6 +99,7 @@ const defaultData = [
     },
     {
         "id": "estes",
+        "tcId": "Estes",
         "name": "Estes Industries",
         "types": [
             "motor",
@@ -171,6 +172,7 @@ const defaultData = [
     },
     {
         "id": "aerotech",
+        "tcId": "AeroTech",
         "name": "AeroTech/Quest",
         "types": [
             "motor",
@@ -183,6 +185,7 @@ const defaultData = [
     },
     {
         "id": "cesaroni",
+        "tcId": "Cesaroni",
         "name": "Cesaroni Technology",
         "types": [
             "motor",
@@ -193,6 +196,7 @@ const defaultData = [
     },
     {
         "id": "loki",
+        "tcId": "Loki",
         "name": "Loki Research",
         "types": [
             "motor",
@@ -467,6 +471,7 @@ const defaultData = [
     },
     {
         "id": "alpha",
+        "tcId": "Alpha",
         "name": "Alpha Hybrids",
         "types": [
             "motor",
@@ -477,6 +482,7 @@ const defaultData = [
     },
     {
         "id": "animalmotorworks",
+        "tcId": "AWM",
         "name": "Animal Motor Works",
         "types": [
             "motor",
@@ -487,6 +493,7 @@ const defaultData = [
     },
     {
         "id": "contrail",
+        "tcId": "Contrail",
         "name": "Contrail Rockets",
         "types": [
             "motor",
@@ -497,6 +504,7 @@ const defaultData = [
     },
     {
         "id": "ellis",
+        "tcId": "Ellis",
         "name": "Ellis Mountain",
         "types": [
             "motor"
@@ -506,6 +514,7 @@ const defaultData = [
     },
     {
         "id": "gorilla",
+        "tcId": "Gorilla",
         "name": "Gorilla Rocket Motors",
         "types": [
             "motor"
@@ -515,6 +524,7 @@ const defaultData = [
     },
     {
         "id": "hypertek",
+        "tcId": "Hypertek",
         "name": "Hypertek",
         "types": [
             "motor"
@@ -524,6 +534,7 @@ const defaultData = [
     },
     {
         "id": "kba",
+        "tcId": "KBA",
         "name": "Kosdon by AeroTech",
         "types": [
             "motor"
@@ -533,6 +544,7 @@ const defaultData = [
     },
     {
         "id": "kosdon",
+        "tcId": "Kosdon",
         "name": "Kosdon TRM",
         "types": [
             "motor"
@@ -542,6 +554,7 @@ const defaultData = [
     },
     {
         "id": "pp",
+        "tcId": "PP",
         "name": "Propulsion Polymers",
         "types": [
             "motor"
@@ -551,6 +564,7 @@ const defaultData = [
     },
     {
         "id": "pml",
+        "tcId": "PML",
         "name": "Public Missiles, Ltd.",
         "types": [
             "motor"
@@ -560,6 +574,7 @@ const defaultData = [
     },
     {
         "id": "quest",
+        "tcId": "Quest",
         "name": "Quest Aerospace",
         "types": [
             "motor"
@@ -569,6 +584,7 @@ const defaultData = [
     },
     {
         "id": "ratt",
+        "tcId": "RATT",
         "name": "R.A.T.T. Works",
         "types": [
             "motor"
@@ -578,6 +594,7 @@ const defaultData = [
     },
     {
         "id": "klima",
+        "tcId": "Klima",
         "name": "Raketenmodellbau Klima",
         "types": [
             "motor"
@@ -587,6 +604,7 @@ const defaultData = [
     },
     {
         "id": "roadrunner",
+        "tcId": "Roadrunner",
         "name": "Roadrunner Rocketry",
         "types": [
             "motor"
@@ -596,6 +614,7 @@ const defaultData = [
     },
     {
         "id": "rvfs",
+        "tcId": "RV",
         "name": "Rocketvision Flight-Star",
         "types": [
             "motor"
@@ -605,6 +624,7 @@ const defaultData = [
     },
     {
         "id": "skyripper",
+        "tcId": "SkyR",
         "name": "Sky Ripper Systems",
         "types": [
             "motor"
@@ -614,6 +634,7 @@ const defaultData = [
     },
     {
         "id": "scr",
+        "tcId": "SCR",
         "name": "Southern Cross Rocketry",
         "types": [
             "motor"
@@ -623,6 +644,7 @@ const defaultData = [
     },
     {
         "id": "wch",
+        "tcId": "WCH",
         "name": "West Coast Hybrids",
         "types": [
             "motor",

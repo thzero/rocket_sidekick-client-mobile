@@ -16,7 +16,7 @@ class BaseDatabaseService extends Service {
 
 		this._serviceDatabase = this._injector.getService(AppConstants.InjectorKeys.SERVICE_DATABASE);
 
-		await this._load(LibraryCommonUtility.generateId());
+		await this._load(LibraryCommonUtility.correlationId());
 	}
 
 	async _load(correlationId) {

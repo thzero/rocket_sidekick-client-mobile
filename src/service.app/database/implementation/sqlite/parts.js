@@ -12,11 +12,11 @@ class PartsDatabaseService extends BasePartsDatabaseService {
 	}
 
 	async manufacturer(correlationId, id) {
-		return this._serviceDatabase.selectById(correlationId, PartsDatabaseService.TableNameParts, id);
+		return this._serviceDatabase.selectJsonById(correlationId, PartsDatabaseService.TableNameParts, id);
 	}
 
 	async parts(correlationId, params) {
-		return this._serviceDatabase.select(correlationId, PartsDatabaseService.TableNameParts, '*');
+		return this._serviceDatabase.selectJson(correlationId, PartsDatabaseService.TableNameParts, '*');
 	}
 
 	async partsClear(correlationId) {

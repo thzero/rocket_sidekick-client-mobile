@@ -76,6 +76,8 @@ class SqliteDatabaseImplementationService extends DatabaseImplementationService 
 	}
 
 	async select(correlationId, table, select, where) {
+		if (String.isNullOrEmpty(where))
+			return await this.query(correlationId, `SELECT ${select} FROM ${table}`);
 		return await this.query(correlationId, `SELECT ${select} FROM ${table} WHERE ${where}`);
 	}
 
@@ -83,9 +85,40 @@ class SqliteDatabaseImplementationService extends DatabaseImplementationService 
 		return await this.query(correlationId, `SELECT * FROM ${table} WHERE id="${id}"`);
 	}
 
+	async selectJson(correlationId, table, select, where) {
+		const response = await this.select(correlationId, table, select, where);
+		const results = [];
+		if (response.results && response.results.length > 0) {
+			let temp;
+			for (const item of response.results) {
+				temp = item['json'];
+				if (!temp)
+					continue;
+
+				results.push(JSON.parse(temp));
+			}
+			response.results = results;
+		}
+
+		return response;
+	}
+
+	async selectJsonById(correlationId, table, id) {
+		const response = await this.selectJsonById(correlationId, table, id);
+		const results = [];
+		if (response.results && response.results.length === 1) {
+			const temp = response.results[0]['json'];
+			if (temp)
+				results.push(JSON.parse(temp));
+			response.results = results;
+		}
+
+		return response;
+	}
+
 	async _initialize(correlationId) {
 		try {
-			const correlationId = LibraryCommonUtility.generateId();
+			const correlationId = LibraryCommonUtility.correlationId();
 
 			this._sqlite = new SQLiteConnection(CapacitorSQLite);
 
