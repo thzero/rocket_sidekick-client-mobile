@@ -31,5 +31,9 @@ import App from '@/components/App.vue';
 
 //start(App, router, store, [ booti18n, bootEventBus, bootNetwork, bootServices, bootValidate, bootUi, bootCookieComply ], bootStarter, {});
 start(App, router, store, [ booti18n, bootEventBus, bootNetwork, bootServices, bootValidate, bootUi ], bootStarter, {
-	idGeneratorOverride: IdGenerator
+	idGenerator: {
+		override: IdGenerator,
+		lengthLong: 16,
+		lengthShort: 16
+	}
 });
