@@ -88,6 +88,10 @@ export default {
 			noBreakingSpaces,
 			notImplementedError,
 			success,
+			features,
+			info,
+			tools,
+			isLoggedIn,
 			contentLink,
 			contentTitle
 		} = useBaseMenuComponent(props, context);
@@ -102,6 +106,10 @@ export default {
 			noBreakingSpaces,
 			notImplementedError,
 			success,
+			features,
+			info,
+			tools,
+			isLoggedIn,
 			contentLink,
 			contentTitle
 		};

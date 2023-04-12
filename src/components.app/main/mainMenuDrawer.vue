@@ -31,7 +31,7 @@
 			</v-list>
 		</v-list-item>
 		<v-list-item
-			v-if="features.Yours.value"
+			v-if="features.Yours.value && isLoggedIn"
 		>
 			{{ $t('menu.yours.title') }}
 			<v-list density="compact">
@@ -121,6 +121,10 @@ export default {
 			noBreakingSpaces,
 			notImplementedError,
 			success,
+			features,
+			info,
+			tools,
+			isLoggedIn,
 			contentLink,
 			contentTitle
 		} = useBaseMenuComponent(props, context);
@@ -137,6 +141,10 @@ export default {
 			noBreakingSpaces,
 			notImplementedError,
 			success,
+			features,
+			info,
+			tools,
+			isLoggedIn,
 			contentLink,
 			contentTitle,
 			websiteUrl
