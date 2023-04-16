@@ -5,6 +5,7 @@ class MobileFeatureService extends FeaturesService {
 		features.CookieComply = false;
 		features.MobileAppLanding = false;
 		features.MobileOnly = true;
+		features.Auth = true;
 	}
 }
 
