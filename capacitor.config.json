@@ -9,10 +9,14 @@
       "iosIsEncryption": false,
       "iosKeychainPrefix": "cap",
       "androidIsEncryption": false
+    },
+    "FirebaseAuthentication": {
+      "skipNativeAuth": false,
+      "providers": ["google.com"]
     }
   },
   "server": {
-    "url": "http://192.168.3.12:3000",
+    "url": "http://192.168.3.12:3001",
     "cleartext": true
   }
 }

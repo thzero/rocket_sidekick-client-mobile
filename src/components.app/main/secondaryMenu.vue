@@ -92,6 +92,8 @@ export default {
 			info,
 			tools,
 			isLoggedIn,
+			clickSignIn,
+			clickSignOut,
 			contentLink,
 			contentTitle
 		} = useBaseMenuComponent(props, context);
@@ -110,6 +112,8 @@ export default {
 			info,
 			tools,
 			isLoggedIn,
+			clickSignIn,
+			clickSignOut,
 			contentLink,
 			contentTitle
 		};

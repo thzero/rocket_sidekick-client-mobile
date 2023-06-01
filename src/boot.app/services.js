@@ -1,5 +1,6 @@
 import AppConstants from '@/constants';
 
+import authService from '@/service.app/auth';
 import checklistsService from '@/service.app/checklists';
 import databaseService from '@/service.app/database/implementation/sqlite/index';
 import checklistsDatabaseService from '@/service.app/database/implementation/sqlite/checklists';
@@ -29,6 +30,10 @@ class AppServiceBoot extends BaseServiceBoot {
 		this._injectService(AppConstants.InjectorKeys.SERVICE_DATABASE_PARTS, new partsDatabaseService());
 
 		this._injectService(AppConstants.InjectorKeys.SERVICE_REST_COMMUNICATION_SECONDARY, new restCommunicationServiceSecondary());
+	}
+
+	_initializeAuth() {
+		return new authService();
 	}
 
 	_initializeChecklists() {

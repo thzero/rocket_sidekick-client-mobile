@@ -9,6 +9,13 @@
         "database": "rocketsidekick"
       },
       "iosDatabaseLocation": "Library/rocketsidekick"
+    },
+    "FirebaseAuthentication": {
+      "skipNativeAuth": false,
+      "providers": ["google.com"]
+    },
+    "SplashScreen": {
+      "launchAutoHide": false
     }
   }
 }

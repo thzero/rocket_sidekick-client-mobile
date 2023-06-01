@@ -7,7 +7,8 @@ import 'vuetify/styles';
 
 import AppSharedConstants from 'rocket_sidekick_common/constants';
 
-import bootStarter from '@thzero/library_client_firebase_vue/boot/starter';
+import bootStarter from '@thzero/library_client_firebase/boot/starter';
+// import bootStarter from '@thzero/library_client_firebase_vue/boot/starter';
 // import bootAsyncComputed from '@thzero/library_client_vue3/boot/asyncComputed';
 import bootEventBus from '@thzero/library_client_vue3/boot/eventBus';
 import booti18n from '@/boot/i18n';
@@ -27,7 +28,7 @@ import store from '@/store.app/pinia'; // STORE TYPE
 
 import start from '@thzero/library_client_vue3/boot/main';
 
-import App from '@/components/App.vue';
+import App from '@/components.app/App.vue';
 
 //start(App, router, store, [ booti18n, bootEventBus, bootNetwork, bootServices, bootValidate, bootUi, bootCookieComply ], bootStarter, {});
 start(App, router, store, [ booti18n, bootEventBus, bootNetwork, bootServices, bootValidate, bootUi ], bootStarter, {
