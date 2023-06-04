@@ -90,15 +90,15 @@ export default defineConfig({optimizeDeps: {
           if (id.includes('/thenby')) {
             return 'app';
           }
-          if (id.includes('/chart.js')) {
-            return 'app-flight';
-          }
-          if (id.includes('/html2canvas')) {
-            return 'app-flight';
-          }
-          if (id.includes('/papaparse')) {
-            return 'app-flight';
-          }
+        //   if (id.includes('/chart.js')) {
+        //     return 'app-flight';
+        //   }
+        //   if (id.includes('/html2canvas')) {
+        //     return 'app-flight';
+        //   }
+        //   if (id.includes('/papaparse')) {
+        //     return 'app-flight';
+        //   }
 
           // // if (id.includes('client/src/library_vue_vuetify')) {
           // //   return 'app';
