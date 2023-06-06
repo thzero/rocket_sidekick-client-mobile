@@ -1,22 +1,8 @@
 import BasePartsDatabaseService from '@/service.app/database/parts';
 
 class PartsDatabaseService extends BasePartsDatabaseService {
-	async doh(correlationId) {
-		const response = await this._serviceDatabase.query('SELECT * FROM test');
-		if (this._hasFailed(response))
-			return response;
-		const response2 = await this._serviceDatabase.query('SELECT * FROM checklists');
-		if (this._hasFailed(response2))
-			return response;
-		return this._successResponse([ response.results, response2.results ], correlationId);
-	}
-
-	async manufacturer(correlationId, id) {
-		return this._serviceDatabase.selectJsonById(correlationId, PartsDatabaseService.TableNameParts, id);
-	}
-
 	async parts(correlationId, params) {
-		return this._serviceDatabase.selectJson(correlationId, PartsDatabaseService.TableNameParts, '*');
+		return await this._serviceDatabase.selectJson(correlationId, PartsDatabaseService.TableNameParts, '*');
 	}
 
 	async partsClear(correlationId) {
@@ -26,7 +12,7 @@ class PartsDatabaseService extends BasePartsDatabaseService {
 	}
 
 	async partsLoad(correlationId, id, manufacturer) {
-		this._serviceDatabase.insert(correlationId, PartsDatabaseService.TableNameParts, id, manufacturer);
+		await this._serviceDatabase.insert(correlationId, PartsDatabaseService.TableNameParts, id, manufacturer);
 	}
 
 	static TableNameParts = 'parts';

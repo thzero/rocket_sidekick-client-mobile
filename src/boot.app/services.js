@@ -6,6 +6,8 @@ import databaseService from '@/service.app/database/implementation/sqlite/index'
 import checklistsDatabaseService from '@/service.app/database/implementation/sqlite/checklists';
 import manufacturersDatabaseService from '@/service.app/database/implementation/sqlite/manufacturers';
 import partsDatabaseService from '@/service.app/database/implementation/sqlite/parts';
+import utilityDatabaseService from '@/service.app/database/implementation/sqlite/utility';
+
 import featuresService from '@/service.app/features';
 import manufacturersService from '@/service.app/manufacturers';
 import partsService from '@/service.app/parts';
@@ -28,6 +30,7 @@ class AppServiceBoot extends BaseServiceBoot {
 		this._injectService(AppConstants.InjectorKeys.SERVICE_DATABASE_CHECKLISTS, new checklistsDatabaseService());
 		this._injectService(AppConstants.InjectorKeys.SERVICE_DATABASE_MANUFACTURERS, new manufacturersDatabaseService());
 		this._injectService(AppConstants.InjectorKeys.SERVICE_DATABASE_PARTS, new partsDatabaseService());
+		this._injectService(AppConstants.InjectorKeys.SERVICE_DATABASE_UTILITY, new utilityDatabaseService());
 
 		this._injectService(AppConstants.InjectorKeys.SERVICE_REST_COMMUNICATION_SECONDARY, new restCommunicationServiceSecondary());
 	}

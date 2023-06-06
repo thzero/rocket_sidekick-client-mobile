@@ -4,7 +4,7 @@ import NotImplementedError from '@thzero/library_common/errors/notImplemented';
 
 import BaseDatabaseService from '@/service.app/database/index';
 
-class ManufacturersDatabaseService extends BaseDatabaseService {
+class BaseManufacturersDatabaseService extends BaseDatabaseService {
 	async manufacturer(correlationId, id) {
 		throw NotImplementedError();
 	}
@@ -32,7 +32,7 @@ class ManufacturersDatabaseService extends BaseDatabaseService {
 	}
 }
 
-export default ManufacturersDatabaseService;
+export default BaseManufacturersDatabaseService;
 
 const defaultData = [
     {

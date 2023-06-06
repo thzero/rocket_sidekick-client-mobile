@@ -5,8 +5,8 @@ class MobileUserService extends UserService {
 		return super._fetchByGamerIdCommunication(correlationId, gamerId);
 	}
 
-	async _fetchByGamerTag(correlationId, gamerTag) {
-		return super._fetchByGamerTag(correlationId, gamerId);
+	async _fetchByGamerTagCommunication(correlationId, gamerTag) {
+		return super._fetchByGamerTagCommunication(correlationId, gamerId);
 	}
 
 	async _refreshSettingsCommunication(correlationId, user) {

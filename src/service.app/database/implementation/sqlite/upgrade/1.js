@@ -14,8 +14,12 @@ class UpgradeSqliteDatabaseScript_1 extends UpgradeSqliteDatabaseScript {
 			'CREATE TABLE IF NOT EXISTS motors (identifier TEXT PRIMARY KEY, json TEXT, name TEXT, impulseClass TEXT, diameter INTEGER, singleUse INTEGER, sparky INTEGER, deleted INTEGER DEFAULT 0)',
 			'CREATE TABLE IF NOT EXISTS parts (identifier TEXT PRIMARY KEY, json TEXT, name TEXT, typeId TEXT, syncTimestamp INTEGER, deleted INTEGER DEFAULT 0)',
 			'CREATE TABLE IF NOT EXISTS rockets (identifier TEXT PRIMARY KEY, json TEXT, name TEXT, diameterMajor INTEGER NULL, typeId TEXT NULL, syncTimestamp INTEGER, deleted INTEGER DEFAULT 0)',
-			'CREATE TABLE IF NOT EXISTS users (identifier TEXT PRIMARY KEY, json TEXT, externalIdentifier TEXT, syncTimestamp INTEGER)',
+			'CREATE TABLE IF NOT EXISTS users (identifier TEXT PRIMARY KEY, json TEXT, externalIdentifier TEXT, syncTimestamp INTEGER, deleted INTEGER DEFAULT 0)',
 			'CREATE TABLE IF NOT EXISTS ttl (identifier TEXT PRIMARY KEY, json TEXT)',
+
+			'CREATE TABLE IF NOT EXISTS content (identifier TEXT PRIMARY KEY, json TEXT, type TEXT, ttl INTEGER, deleted INTEGER DEFAULT 0)',
+			'CREATE TABLE IF NOT EXISTS initialize (identifier TEXT PRIMARY KEY, json TEXT, ttl INTEGER, deleted INTEGER DEFAULT 0)',
+			'CREATE TABLE IF NOT EXISTS openSource (identifier TEXT PRIMARY KEY, json TEXT, ttl INTEGER, deleted INTEGER DEFAULT 0)',
 
 			"CREATE INDEX IF NOT EXISTS checklists_identifier ON checklists (identifier ASC, deleted ASC)",
 			"CREATE INDEX IF NOT EXISTS checklists_search ON checklists (isDefault, statusId, typeId ASC, deleted ASC)",
@@ -36,7 +40,12 @@ class UpgradeSqliteDatabaseScript_1 extends UpgradeSqliteDatabaseScript {
 			"CREATE INDEX IF NOT EXISTS rockets_syncTimestamp ON rockets (syncTimestamp ASC)",
 			"CREATE INDEX IF NOT EXISTS users_identifier ON users (identifier ASC)",
 			"CREATE INDEX IF NOT EXISTS users_externalIdentifier ON users (externalIdentifier ASC)",
-			"CREATE INDEX IF NOT EXISTS users_syncTimestamp ON users (syncTimestamp ASC)"
+			"CREATE INDEX IF NOT EXISTS users_syncTimestamp ON users (syncTimestamp ASC)",
+
+			"CREATE INDEX IF NOT EXISTS content_identifier ON content (identifier ASC)",
+			"CREATE INDEX IF NOT EXISTS content_type ON content (type ASC)",
+			"CREATE INDEX IF NOT EXISTS initialize_identifier ON initialize (identifier ASC)",
+			"CREATE INDEX IF NOT EXISTS openSource_identifier ON openSource (identifier ASC)"
 		];
 	}
 }

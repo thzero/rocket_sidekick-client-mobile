@@ -4,7 +4,7 @@ import NotImplementedError from '@thzero/library_common/errors/notImplemented';
 
 import BaseDatabaseService from '@/service.app/database/index';
 
-class ChecklistsDatabaseService extends BaseDatabaseService {
+class BaseChecklistsDatabaseService extends BaseDatabaseService {
 	async checklist(correlationId, id) {
 		throw NotImplementedError();
 	}
@@ -32,7 +32,7 @@ class ChecklistsDatabaseService extends BaseDatabaseService {
 	}
 }
 
-export default ChecklistsDatabaseService;
+export default BaseChecklistsDatabaseService;
 
 const defaultData = [
 	{

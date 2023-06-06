@@ -4,7 +4,7 @@ import NotImplementedError from '@thzero/library_common/errors/notImplemented';
 
 import BaseDatabaseService from '@/service.app/database/index';
 
-class PartsDatabaseService extends BaseDatabaseService {
+class BasePartsDatabaseService extends BaseDatabaseService {
 	async manufacturer(correlationId, id) {
 		throw NotImplementedError();
 	}
@@ -32,4 +32,4 @@ class PartsDatabaseService extends BaseDatabaseService {
 	}
 }
 
-export default PartsDatabaseService;
+export default BasePartsDatabaseService;

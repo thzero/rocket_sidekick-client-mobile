@@ -1,6 +1,6 @@
 <template>
 	<v-list density="compact">
-		<!-- <v-list-item>
+		<v-list-item>
 			{{ $t('menu.content.info.title') }}
 			<v-list density="compact">
 				<v-list-item
@@ -11,7 +11,7 @@
 					<v-list-item-title>{{ contentTitle(item) }}</v-list-item-title>
 				</v-list-item>
 			</v-list>
-		</v-list-item> -->
+		</v-list-item>
 		<v-list-item
 			v-if="features.Rocket"
 			to="/rockets"
