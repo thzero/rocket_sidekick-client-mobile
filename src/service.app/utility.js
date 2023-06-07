@@ -144,22 +144,6 @@ class MobileUtilityService extends AppUtilityService {
 	}
 
 	async _openSourceCommunication(correlationId) {
-		// try {
-		// 	// if (LibraryClientUtility.online)
-		// 	return await super._openSourceCommunication(correlationId, content);
-		// 	// TODO: Save it to the database
-
-		// 	// const response = await this._serviceDatabase.openSource(correlationId, params);
-		// 	// this._logger.debug('MobileUtilityService', '_openSourceCommunication', 'response', response, correlationId);
-		// 	// if (this._hasFailed(response))
-		// 	// 	return response;
-		// 	// response.results = { data: response.results }; // match standard http response
-		// 	// return response;
-		// }
-		// catch (err) {
-		// 	return this._error('MobileUtilityService', '_openSourceCommunication', null, err, null, null, correlationId);
-		// }
-
 		try {
 			let response = await this._serviceDatabase.openSource(correlationId);
 			this._logger.debug('MobileUtilityService', '_openSourceCommunication', 'response.database', response, correlationId);
