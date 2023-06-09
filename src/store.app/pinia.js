@@ -5,6 +5,9 @@ class MobileAppStore extends AppStore {
 		return [];
 	}
 
+	_initPluginPersistConfigPaths() {
+		return [];
+	}
 }
 
 export default MobileAppStore;
