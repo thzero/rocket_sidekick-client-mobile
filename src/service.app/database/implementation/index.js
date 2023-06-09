@@ -6,9 +6,7 @@ class DatabaseImplementationService extends Service {
 	async init(injector) {
 		await super.init(injector);
 
-		const correlationId = LibraryCommonUtility.correlationId();
-
-		await this._initialize(correlationId);
+		await this._initialize(LibraryCommonUtility.correlationId());
 	}
 
 	async _initialize(correlationId) {

@@ -21,6 +21,7 @@
     "dev": "vite --host 0.0.0.0",
     "dev2": "vite",
     "build": "./build.sh",
+    "build2": "vite build",
     "preview": "vite preview"
   },
   "dependencies": {

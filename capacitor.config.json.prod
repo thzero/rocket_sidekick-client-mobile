@@ -5,10 +5,10 @@
   "bundledWebRuntime": false,
   "plugins": {
     "CapacitorSQLite": {
-      "capConnectionOptions": {
-        "database": "rocketsidekick"
-      },
-      "iosDatabaseLocation": "Library/rocketsidekick"
+      "iosDatabaseLocation": "Library/rocketsidekick",
+      "iosIsEncryption": false,
+      "iosKeychainPrefix": "cap",
+      "androidIsEncryption": false
     },
     "FirebaseAuthentication": {
       "skipNativeAuth": false,

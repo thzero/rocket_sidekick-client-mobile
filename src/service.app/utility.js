@@ -1,5 +1,6 @@
 import AppConstants from '@/constants';
 
+import AppUtility from '@/utility/app';
 import LibraryClientUtility from '@thzero/library_client/utility/index';
 import LibraryCommonUtility from '@thzero/library_common/utility';
 
@@ -26,7 +27,7 @@ class MobileUtilityService extends AppUtilityService {
 				return response;
 
 			if (!LibraryCommonUtility.isNull(response.results)) {
-				if (this._ttlDelta(response.results.ttl))
+				if (AppUtility.ttlDelta(response.results.ttl))
 					return this._successResponse(response.results.json, correlationId);
 			}
 
@@ -66,7 +67,7 @@ class MobileUtilityService extends AppUtilityService {
 				return response;
 
 			if (!LibraryCommonUtility.isNull(response.results)) {
-				if (this._ttlDelta(response.results.ttl))
+				if (AppUtility.ttlDelta(response.results.ttl))
 					return this._successResponse(response.results.json, correlationId);
 			}
 
@@ -106,7 +107,7 @@ class MobileUtilityService extends AppUtilityService {
 				return response;
 
 			if (!LibraryCommonUtility.isNull(response.results)) {
-				if (this._ttlDelta(response.results.ttl))
+				if (AppUtility.ttlDelta(response.results.ttl))
 					return this._successResponse(response.results.json, correlationId);
 			}
 
@@ -151,8 +152,7 @@ class MobileUtilityService extends AppUtilityService {
 				return response;
 
 			if (!LibraryCommonUtility.isNull(response.results)) {
-				const delta = this._ttlDelta(response.results.ttl);
-				if (delta > 0)
+				if (AppUtility.ttlDelta(response.results.ttl))
 					return this._successResponse(response.results.json, correlationId);
 			}
 
@@ -182,12 +182,6 @@ class MobileUtilityService extends AppUtilityService {
 		catch (err) {
 			return this._error('MobileUtilityService', '_contentCommunication', null, err, null, null, correlationId);
 		}
-	}
-
-	_ttlDelta(ttl) {
-		const now = LibraryCommonUtility.getTimestamp();
-		const delta = ttl - now;
-		return delta > 0;
 	}
 }
 
