@@ -6,6 +6,7 @@ plugins {
 }
 
 android {
+    namespace "com.rocketsidekick"
     compileSdkVersion rootProject.ext.compileSdkVersion
     defaultConfig {
         applicationId "com.rocketsidekick"
