@@ -54,7 +54,7 @@
 				v-if="features.Yours.Launches"
 				to="/user/launches"
 			>
-				<v-list-item-title>{{ $t('menu.yours.rockets') }}</v-list-item-title>
+				<v-list-item-title>{{ $t('menu.yours.launches') }}</v-list-item-title>
 			</v-list-item>
 			<v-divider
 				v-if="features.Yours.Checklists && features.Yours.Launches"
