@@ -1,7 +1,3 @@
-import AppConstants from '@/constants';
-
-import LibraryClientUtility from '@thzero/library_client/utility/index';
-
 import RocketsService from '@/service/rockets';
 
 class MobileRocketsService extends RocketsService {
