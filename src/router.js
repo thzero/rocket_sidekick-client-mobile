@@ -113,7 +113,7 @@ const routes = [
 					{
 						path: '',
 						name: 'content_rocket',
-						component: () => import(/* webpackPrefetch: true */ /* webpackChunkName: "group-content-info" */ './components/content/rockets/RocketInfo.vue'),
+						component: () => import(/* webpackPrefetch: true */ /* webpackChunkName: "group-content-info" */ './components/content/rockets/rocket/RocketInfo.vue'),
 						meta: {
 							requiresAuth: false
 						}
@@ -155,7 +155,7 @@ const routes = [
 	// 				{
 	// 					path: '',
 	// 					name: 'content_checklist',
-	// 					component: () => import(/* webpackPrefetch: true */ /* webpackChunkName: "group-content-info" */ './components/checklists/Checklist.vue'),
+	// 					component: () => import(/* webpackPrefetch: true */ /* webpackChunkName: "group-content-info" */ './components/content/checklists/Checklist.vue'),
 	// 					meta: {
 	// 						requiresAuth: true
 	// 					}
@@ -176,7 +176,7 @@ const routes = [
 					{
 						path: '',
 						name: 'content_checklists',
-						component: () => import(/* webpackPrefetch: true */ /* webpackChunkName: "group-content-info" */ './components/checklists/Checklists.vue'),
+						component: () => import(/* webpackPrefetch: true */ /* webpackChunkName: "group-content-info" */ './components/content/checklists/Checklists.vue'),
 						meta: {
 							requiresAuth: true
 						}
