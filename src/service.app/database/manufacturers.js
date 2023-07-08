@@ -92,7 +92,8 @@ const defaultData = [
             "blanket",
             "deploymentbag",
             "parachute",
-            "rocket"
+            "rocket",
+            "streamer"
         ],
         "ownerId": "aeUlOLSfDtwt5glvblEDl",
         "public": true
@@ -104,7 +105,8 @@ const defaultData = [
         "types": [
             "motor",
             "parachute",
-            "rocket"
+            "rocket",
+            "streamer"
         ],
         "ownerId": "aeUlOLSfDtwt5glvblEDl",
         "public": true
@@ -126,7 +128,8 @@ const defaultData = [
         "types": [
             "blanket",
             "deploymentbag",
-            "parachute"
+            "parachute",
+            "streamer"
         ],
         "ownerId": "aeUlOLSfDtwt5glvblEDl",
         "public": true
@@ -227,13 +230,16 @@ const defaultData = [
     },
     {
         "id": "d37HEk5Wjm3mmV4InK90U",
-        "name": "Custom",
+        "name": "User",
         "types": [
             "altimeter",
             "blanket",
             "deploymentbag",
+            "motor",
+            "motorCase",
             "parachute",
             "rocket",
+            "streamer",
             "tracker"
         ],
         "ownerId": "aeUlOLSfDtwt5glvblEDl",
