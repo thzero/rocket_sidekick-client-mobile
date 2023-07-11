@@ -39,6 +39,7 @@ const defaultData = [
         "id": "x1sJln9TkTX9PCdjb7FWd",
         "name": "LOC Precision",
         "types": [
+            "chuteProtector",
             "parachute",
             "rocket"
         ],
@@ -49,7 +50,7 @@ const defaultData = [
         "id": "Ps0sZYmOdJzjklM7fwZeJ",
         "name": "Top Flight Recovery, LLC",
         "types": [
-            "blanket",
+            "chuteProtector",
             "parachute"
         ],
         "ownerId": "aeUlOLSfDtwt5glvblEDl",
@@ -89,8 +90,8 @@ const defaultData = [
         "id": "x64qK1AGpX3zqD7GoEW2c",
         "name": "Rocketman",
         "types": [
-            "blanket",
-            "deploymentbag",
+            "chuteProtector",
+            "deploymentBag",
             "parachute",
             "rocket",
             "streamer"
@@ -115,6 +116,7 @@ const defaultData = [
         "id": "iNnpocURjOVmPT4cgUv4k",
         "name": "Apogee Components",
         "types": [
+            "chuteProtector",
             "motor",
             "parachute",
             "rocket"
@@ -126,8 +128,8 @@ const defaultData = [
         "id": "hHO8FL4yyhauSB6Hf2nx9",
         "name": "Fruity Chutes",
         "types": [
-            "blanket",
-            "deploymentbag",
+            "chuteProtector",
+            "deploymentBag",
             "parachute",
             "streamer"
         ],
@@ -221,8 +223,8 @@ const defaultData = [
         "id": "UyyELygKrDrE7istlMZWP",
         "name": "Sky Angle",
         "types": [
-            "blanket",
-            "deploymentbag",
+            "chuteProtector",
+            "deploymentBag",
             "parachute"
         ],
         "ownerId": "aeUlOLSfDtwt5glvblEDl",
@@ -233,8 +235,8 @@ const defaultData = [
         "name": "User",
         "types": [
             "altimeter",
-            "blanket",
-            "deploymentbag",
+            "chuteProtector",
+            "deploymentBag",
             "motor",
             "motorCase",
             "parachute",
