@@ -660,5 +660,33 @@ const defaultData = [
         ],
         "ownerId": "aeUlOLSfDtwt5glvblEDl",
         "public": true
+    },
+    {
+        "id": "QcfWg2x0p01LMNKrujE6X",
+        "name": "MicroPeak",
+        "types": [
+            "altimeter"
+        ],
+        "ownerId": "aeUlOLSfDtwt5glvblEDl",
+        "public": true
+    },
+    {
+        "id": "9NHaJXHWSVbPvxOBeVoh8",
+        "name": "Altus Metrum",
+        "types": [
+            "altimeter",
+            "tracker"
+        ],
+        "ownerId": "aeUlOLSfDtwt5glvblEDl",
+        "public": true
+    },
+    {
+        "id": "ZMVWotg99niKEhD7BpPra",
+        "name": "Adrel",
+        "types": [
+            "altimeter"
+        ],
+        "ownerId": "aeUlOLSfDtwt5glvblEDl",
+        "public": true
     }
 ];
