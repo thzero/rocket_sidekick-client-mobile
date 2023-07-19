@@ -22,7 +22,8 @@
     "dev2": "vite",
     "build": "./build.sh",
     "build2": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "id": "library-cli --nano"
   },
   "dependencies": {
     "@capacitor-community/sqlite": "^5.0.5",
