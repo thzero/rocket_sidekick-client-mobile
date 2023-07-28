@@ -26,8 +26,8 @@
     "id": "library-cli --nano"
   },
   "dependencies": {
-    "@capacitor-community/sqlite": "^5.0.5",
-    "@capacitor-firebase/authentication": "^5.0.1",
+    "@capacitor-community/sqlite": "^5.0.6",
+    "@capacitor-firebase/authentication": "^5.1.0",
     "@capacitor/android": "^5.2.2",
     "@capacitor/core": "^5.2.2",
     "@capacitor/network": "^5.0.6",
@@ -37,9 +37,9 @@
     "@thzero/library_client_firebase": "^0.17.11",
     "@thzero/library_client_firebase_vue": "^0.17.8",
     "@thzero/library_client_service_rest_fetch": "^0.17.2",
-    "@thzero/library_client_vue3": "^0.17.46",
+    "@thzero/library_client_vue3": "^0.17.48",
     "@thzero/library_client_vue3_store_pinia": "^0.17.9",
-    "@thzero/library_client_vue3_vuetify3": "^0.17.34",
+    "@thzero/library_client_vue3_vuetify3": "^0.17.35",
     "@thzero/library_common": "^0.17.9",
     "@vuepic/vue-datepicker": "^3.6.7",
     "async-mutex": "^0.4.0",
