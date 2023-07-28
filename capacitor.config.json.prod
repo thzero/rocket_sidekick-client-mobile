@@ -2,5 +2,19 @@
   "appId": "com.rocketsidekick",
   "appName": "Rocket Sidekick",
   "webDir": "dist",
-  "bundledWebRuntime": false
+  "plugins": {
+    "CapacitorSQLite": {
+      "iosDatabaseLocation": "Library/rocketsidekick",
+      "iosIsEncryption": false,
+      "iosKeychainPrefix": "cap",
+      "androidIsEncryption": false
+    },
+    "FirebaseAuthentication": {
+      "skipNativeAuth": false,
+      "providers": ["google.com"]
+    },
+    "SplashScreen": {
+      "launchAutoHide": false
+    }
+  }
 }

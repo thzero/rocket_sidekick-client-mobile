@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "15882869138",
+    "project_id": "rocketsidekick",
+    "storage_bucket": "rocketsidekick.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:15882869138:android:83b7b24e132fff8abe094b",
+        "android_client_info": {
+          "package_name": "com.rocketsidekick"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "15882869138-r37rtd6r6oi4p4dqn1mgheiajrff6hh1.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.rocketsidekick",
+            "certificate_hash": "ea819d282f0e7f4aab321e584edfc797ce75cc64"
+          }
+        },
+        {
+          "client_id": "15882869138-tlgqnvu12tlh295fria0edoejjgscnuc.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCIs1mhKSAI0uK_0IgVotY5CfGXLuHoSJ8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "15882869138-tlgqnvu12tlh295fria0edoejjgscnuc.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

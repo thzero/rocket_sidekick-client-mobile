@@ -18,6 +18,27 @@ const routes = [
 		]
 	},
 	{
+		path: '/content/info/:id',
+		component: () => import(/* webpackPrefetch: true */ /* webpackChunkName: "group-layouts" */ './layouts/MainLayout.vue'),
+		children: [
+			{
+				path: '',
+				name: 'content_info',
+				component: () => import(/* webpackPrefetch: true */ /* webpackChunkName: "group-layouts" */ './layouts/ContentLayout.vue'),
+				children: [
+					{
+						path: '',
+						name: 'content_info',
+						component: () => import(/* webpackPrefetch: true */ /* webpackChunkName: "group-content-info" */ './components/content/info/InfoMarkup.vue'),
+						meta: {
+							requiresAuth: false
+						}
+					}
+				]
+			}
+		]
+	},
+	{
 		path: '/content/tools/parachuteSizing',
 		component: () => import(/* webpackPrefetch: true */ /* webpackChunkName: "group-layouts" */ './layouts/MainLayout.vue'),
 		children: [
@@ -92,7 +113,7 @@ const routes = [
 					{
 						path: '',
 						name: 'content_rocket',
-						component: () => import(/* webpackPrefetch: true */ /* webpackChunkName: "group-content-info" */ './components/content/rockets/RocketInfo.vue'),
+						component: () => import(/* webpackPrefetch: true */ /* webpackChunkName: "group-content-info" */ './components/content/rockets/rocket/RocketInfo.vue'),
 						meta: {
 							requiresAuth: false
 						}
@@ -116,6 +137,48 @@ const routes = [
 						component: () => import(/* webpackPrefetch: true */ /* webpackChunkName: "group-content-info" */ './components/content/rockets/Rockets.vue'),
 						meta: {
 							requiresAuth: false
+						}
+					}
+				]
+			}
+		]
+	},
+	// {
+	// 	path: '/user/checklists/:id',
+	// 	component: () => import(/* webpackPrefetch: true */ /* webpackChunkName: "group-layouts" */ './layouts/MainLayout.vue'),
+	// 	children: [
+	// 		{
+	// 			path: '',
+	// 			name: 'content_checklist',
+	// 			component: () => import(/* webpackPrefetch: true */ /* webpackChunkName: "group-layouts" */ './layouts/ContentLayout.vue'),
+	// 			children: [
+	// 				{
+	// 					path: '',
+	// 					name: 'content_checklist',
+	// 					component: () => import(/* webpackPrefetch: true */ /* webpackChunkName: "group-content-info" */ './components/content/checklists/Checklist.vue'),
+	// 					meta: {
+	// 						requiresAuth: true
+	// 					}
+	// 				}
+	// 			]
+	// 		}
+	// 	]
+	// },
+	{
+		path: '/user/checklists',
+		component: () => import(/* webpackPrefetch: true */ /* webpackChunkName: "group-layouts" */ './layouts/MainLayout.vue'),
+		children: [
+			{
+				path: '',
+				name: 'content_checklists',
+				component: () => import(/* webpackPrefetch: true */ /* webpackChunkName: "group-layouts" */ './layouts/ContentLayout.vue'),
+				children: [
+					{
+						path: '',
+						name: 'content_checklists',
+						component: () => import(/* webpackPrefetch: true */ /* webpackChunkName: "group-content-info" */ './components/content/checklists/Checklists.vue'),
+						meta: {
+							requiresAuth: true
 						}
 					}
 				]

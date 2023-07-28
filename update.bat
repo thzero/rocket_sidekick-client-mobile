@@ -1,1 +1,2 @@
-npm run buildnpx cap update
+npm run build
+npx cap update

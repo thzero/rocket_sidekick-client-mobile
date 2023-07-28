@@ -1,6 +1,6 @@
 #!/bin/bash
 
-vite build
+npm run build2
 
 copy capacitor.config.json.prod capacitor.config.json
 

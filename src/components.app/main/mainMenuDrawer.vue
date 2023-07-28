@@ -1,6 +1,17 @@
 <template>
 	<v-list density="compact">
-		<!-- <v-list-item>
+		<v-list-item
+			to="/"
+		>
+			<v-list-item-title>{{ $t('titles.home') }}</v-list-item-title>
+		</v-list-item>
+		<v-list-item
+			v-if="features.Rockets"
+			to="/rockets"
+		>
+			<v-list-item-title>{{ $t('menu.content.rockets.title') }}</v-list-item-title>
+		</v-list-item>
+		<v-list-item>
 			{{ $t('menu.content.info.title') }}
 			<v-list density="compact">
 				<v-list-item
@@ -11,7 +22,7 @@
 					<v-list-item-title>{{ contentTitle(item) }}</v-list-item-title>
 				</v-list-item>
 			</v-list>
-		</v-list-item> -->
+		</v-list-item>
 		<v-list-item
 			v-if="features.Rocket"
 			to="/rockets"
@@ -31,40 +42,87 @@
 			</v-list>
 		</v-list-item>
 		<v-list-item
-			v-if="features.Yours.value"
+			v-if="features.Yours.value && isLoggedIn"
 		>
 			{{ $t('menu.yours.title') }}
 			<v-list density="compact">
 				<v-list-item
 					v-if="features.Yours.Checklists"
-					to="/yours/checklists"
+					to="/user/checklists"
 				>
 					<v-list-item-title>{{ $t('menu.yours.checklists') }}</v-list-item-title>
 				</v-list-item>
 				<v-list-item
 					v-if="features.Yours.Launches"
-					to="/yours/launches"
+					to="/user/launches"
 				>
 					<v-list-item-title>{{ $t('menu.yours.launches') }}</v-list-item-title>
 				</v-list-item>
-				<v-divider></v-divider>
+				<v-list-item
+					v-if="features.Yours.Rockets"
+					to="/user/rockets"
+				>
+					<v-list-item-title>{{ $t('menu.yours.rockets') }}</v-list-item-title>
+				</v-list-item>
+				<v-divider
+					v-if="features.Yours.Checklists || features.Yours.Launches || features.Yours.Rockets"
+				></v-divider>
+				<v-list-subheader>
+					{{ $t('menu.yours.parts') }}
+				</v-list-subheader>
 				<v-list-item
 					v-if="features.Yours.Altimeters"
-					to="/yours/altimeters"
+					to="/user/altimeters"
 				>
 					<v-list-item-title>{{ $t('menu.yours.altimeters') }}</v-list-item-title>
 				</v-list-item>
 				<v-list-item
+					v-if="features.Yours.ChuteProtectors"
+					to="/user/chuteProtectors"
+				>
+					<v-list-item-title>{{ $t('menu.yours.chuteProtectors') }}</v-list-item-title>
+				</v-list-item>
+				<v-list-item
+					v-if="features.Yours.ChuteReleases"
+					to="/user/chuteReleases"
+				>
+					<v-list-item-title>{{ $t('menu.yours.chuteReleases') }}</v-list-item-title>
+				</v-list-item>
+				<v-list-item
+					v-if="features.Yours.DeploymentBags"
+					to="/user/deploymentBags"
+				>
+					<v-list-item-title>{{ $t('menu.yours.deploymentBags') }}</v-list-item-title>
+				</v-list-item>
+				<v-list-item
+					v-if="features.Yours.Motors"
+					to="/user/motors"
+				>
+					<v-list-item-title>{{ $t('menu.yours.motors') }}</v-list-item-title>
+				</v-list-item>
+				<v-list-item
+					v-if="features.Yours.MotorCases"
+					to="/user/motorCases"
+				>
+					<v-list-item-title>{{ $t('menu.yours.motorCases') }}</v-list-item-title>
+				</v-list-item>
+				<v-list-item
 					v-if="features.Yours.Parachutes"
-					to="/yours/parachutes"
+					to="/user/parachutes"
 				>
 					<v-list-item-title>{{ $t('menu.yours.parachutes') }}</v-list-item-title>
 				</v-list-item>
 				<v-list-item
-					v-if="features.Yours.Rockets"
-					to="/yours/rockets"
+					v-if="features.Yours.Streamers"
+					to="/user/streamers"
 				>
-					<v-list-item-title>{{ $t('menu.yours.rockets') }}</v-list-item-title>
+					<v-list-item-title>{{ $t('menu.yours.streamers') }}</v-list-item-title>
+				</v-list-item>
+				<v-list-item
+					v-if="features.Yours.Trackers"
+					to="/user/trackers"
+				>
+					<v-list-item-title>{{ $t('menu.yours.trackers') }}</v-list-item-title>
 				</v-list-item>
 			</v-list>
 		</v-list-item>
@@ -87,19 +145,21 @@
 			</v-list>
 		</v-list-item> -->
 		<v-list-item
-			v-if="features.MobileApp"
-			to="/landing"
+			:href="websiteUrl"
+			target="_blank"
 		>
-			<v-list-item-title>{{ $t('menu.content.app') }}</v-list-item-title>
+			<v-list-item-title>{{ $t('menu.content.website') }}</v-list-item-title>
 		</v-list-item>
 	</v-list>
 </template>
 
 <script>
+import { ref } from 'vue';
+
+import AppSharedConstants from '@/utility/constants';
+
 import { useBaseMenuComponent } from '@/components/main/baseMenu';
 import { baseBaseMenuProps } from '@/components/main/baseBaseMenuProps';
-
-import AppConstants from '@/utility/constants';
 
 export default {
 	name: 'MainMenuDrawer',
@@ -117,9 +177,15 @@ export default {
 			noBreakingSpaces,
 			notImplementedError,
 			success,
+			features,
+			info,
+			tools,
+			isLoggedIn,
 			contentLink,
 			contentTitle
 		} = useBaseMenuComponent(props, context);
+
+		const websiteUrl = ref(AppSharedConstants.External.url);
 
 		return {
 			correlationId,
@@ -131,8 +197,13 @@ export default {
 			noBreakingSpaces,
 			notImplementedError,
 			success,
+			features,
+			info,
+			tools,
+			isLoggedIn,
 			contentLink,
-			contentTitle
+			contentTitle,
+			websiteUrl
 		};
 	}
 };

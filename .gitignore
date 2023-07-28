@@ -29,6 +29,7 @@ firebase-debug.log*
 
 .npmrc
 
+capacitor.config.json
 /src/config/config.json
 /src/config/config.json.bak
 /src/config/development.json
