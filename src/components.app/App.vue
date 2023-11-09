@@ -65,7 +65,16 @@ export default {
 		text-decoration: underline;
 	}
 
-	.measurementUnits {
+	.measurementUnitExtraLong {
+		width: 120px;
+	}
+	.measurementUnitLong {
+		width: 105px;
+	}
+	.measurementUnitMedium {
+		width: 100px;
+	}
+	.measurementUnitsMedium {
 		width: 125px;
 	}
 </style>
