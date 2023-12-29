@@ -7,15 +7,14 @@ import 'vuetify/styles';
 
 import AppSharedConstants from 'rocket_sidekick_common/constants';
 
+import LibraryCommonUtility from '@thzero/library_common/utility/index';
+
 import bootStarter from '@thzero/library_client_firebase/boot/starter';
-// import bootStarter from '@thzero/library_client_firebase_vue/boot/starter';
 // import bootAsyncComputed from '@thzero/library_client_vue3/boot/asyncComputed';
 import bootEventBus from '@thzero/library_client_vue3/boot/eventBus';
 import booti18n from '@/boot/i18n';
 import bootNetwork from '@/boot/network';
-// import bootServices from '@/boot/services';
 import bootServices from '@/boot.app/services';
-// import bootUi from '@thzero/library_client_vue3_vuetify3/boot/ui';
 import bootUi from '@/boot/ui';
 import bootValidate from '@/boot/validate';
 // import bootWebComponents from '@thzero/library_client_vue3/boot/webComponents';
@@ -23,8 +22,7 @@ import bootValidate from '@/boot/validate';
 
 import router from '@/router';
 
-import store from '@/store.app/pinia'; // STORE TYPE
-// import storeSetup from '@/store/vuex'; // STORE TYPE
+import store from '@/store.app/pinia';
 
 import start from '@thzero/library_client_vue3/boot/main';
 
