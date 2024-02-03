@@ -60,21 +60,43 @@ export default {
 			background-attachment: fixed;
 	} */
 
+	.text-contrast {
+		color: rgb(var(--v-theme-contrast))
+	}
+
 	.displayLink {
 		cursor: pointer;
 		text-decoration: underline;
 	}
 
 	.measurementUnitExtraLong {
-		width: 120px;
+		width: 140px;
+	}
+	.measurementUnitExtraExtraLong {
+		width: 160px;
 	}
 	.measurementUnitLong {
-		width: 105px;
+		width: 125px;
 	}
 	.measurementUnitMedium {
-		width: 100px;
+		width: 115px;
 	}
 	.measurementUnitsMedium {
 		width: 125px;
+	}
+	.router-link {
+	}
+	.toolbar-button {
+	}
+	.toolbar-title {
+		text-decoration: none;
+	}
+	.v-expansion-panel-text__wrapper {
+		padding-bottom: 0px !important;
+		padding-left: 12px !important;
+		padding-right: 0px !important;
+	}
+	.v-expansion-panel--active > .v-expansion-panel-title {
+		min-height: 0px !important;
 	}
 </style>
