@@ -3,7 +3,9 @@
 		v-if="$vuetify.display.mdAndUp"
 	>
 		<template v-slot:activator="{ props }">
-			<v-btn append-icon="mdi-menu-down"
+			<v-btn
+				append-icon="mdi-menu-down"
+				prepend-icon=" mdi-information-outline"
 				v-bind="props"
 			>{{ $t('menu.content.info.title') }}</v-btn>
 		</template>
@@ -17,13 +19,15 @@
 			</v-list-item>
 		</v-list>
 	</v-menu> -->
-	<v-menu
+	<!-- <v-menu
 		v-if="$vuetify.display.mdAndUp"
 	>
 		<template v-slot:activator="{ props }">
-			<v-btn append-icon="mdi-menu-down"
-		variant="tonal"
-		class="mr-2"
+			<v-btn
+				append-icon="mdi-menu-down"
+				prepend-icon="mdi-tools"
+				variant="tonal"
+				class="mr-2"
 				v-bind="props"
 			>{{ $t('menu.content.tools.title') }}</v-btn>
 		</template>
@@ -36,14 +40,16 @@
 				<v-list-item-title>{{ contentTitle(item) }}</v-list-item-title>
 			</v-list-item>
 		</v-list>
-	</v-menu>
+	</v-menu> -->
 	<v-menu
 		v-if="$vuetify.display.mdAndUp && features.Yours.value && isLoggedIn"
 	>
 		<template v-slot:activator="{ props }">
-			<v-btn append-icon="mdi-menu-down"
-		variant="tonal"
-		class="mr-2"
+			<v-btn 
+				append-icon="mdi-menu-down"
+				prepend-icon="mdi-account"
+				variant="tonal"
+				class="mr-2"
 				v-bind="props"
 			>{{ $t('menu.yours.title') }}</v-btn>
 		</template>
@@ -140,14 +146,15 @@
 			</v-list-item>
 		</v-list>
 	</v-menu>
-	<v-btn
+	<!-- <v-btn
 		v-if="$vuetify.display.mdAndUp"
+		prepend-icon="mdi-link"
 		variant="tonal"
 		class="mr-2"
 		to="/content/links"
 	>
 		{{ $t('menu.content.links.title') }}
-	</v-btn>
+	</v-btn> -->
 	<v-btn
 		v-if="$vuetify.display.mdAndUp"
 		variant="tonal"
