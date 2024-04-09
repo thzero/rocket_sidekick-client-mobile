@@ -112,8 +112,8 @@ const routes = [
 				children: [
 					{
 						path: '',
-						name: 'content_rocket',
-						component: () => import(/* webpackPrefetch: true */ /* webpackChunkName: "group-content-info" */ './components/content/rockets/rocket/RocketInfo.vue'),
+						name: 'content_rocket_info',
+						component: () => import(/* webpackPrefetch: true */ /* webpackChunkName: "group-content-info" */ './components/content/rockets/gallery/rocket/Gallery.vue'),
 						meta: {
 							requiresAuth: false
 						}
@@ -134,7 +134,7 @@ const routes = [
 					{
 						path: '',
 						name: 'content_rockets',
-						component: () => import(/* webpackPrefetch: true */ /* webpackChunkName: "group-content-info" */ './components/content/rockets/Rockets.vue'),
+						component: () => import(/* webpackPrefetch: true */ /* webpackChunkName: "group-content-info" */ './components/content/rockets/gallery/Gallery.vue'),
 						meta: {
 							requiresAuth: false
 						}

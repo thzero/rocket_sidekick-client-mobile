@@ -1,15 +1,12 @@
-Suggestions
+Issues
 
-    Better validation on foam (and other tools) based on english/metric measurement unit selected.
+    Blank or Black Screen
+        If http app does not show, then check that VPN, etc. is running
+    White Screen
+        Generally an issue in the browser SplashScreen
 
-For calculations instead of mathjs?
-    https://theoephraim.github.io/node-google-spreadsheet/#/
-
-Tools
-    Foam
-        Allow selection of rocket once enabled
-    Parachute Sizing
-        Lookup to the atompsheric chart based on altitude entry
-        Allow selection of parachute and rocket once enabled
-    Thrust2Weight
-        Allow selection of rocket once enabled
+Debugging
+    https://developer.chrome.com/docs/devtools/remote-debugging/webviews/
+    run chrome://inspect
+    To start debugging, click inspect below the WebView you want to debug. 
+        Use DevTools as you would for a remote browser tab.

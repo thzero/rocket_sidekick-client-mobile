@@ -155,8 +155,20 @@ class SqliteDatabaseImplementationService extends DatabaseImplementationService 
 
 			this._upgrades.push(new UpgradeSqliteDatabaseScript_1());
 
-			for (const item of this._upgrades)
-				await this._sqlite.addUpgradeStatement(this._dbName, item.version, item.statements());
+			// for (const item of this._upgrades)
+			// 	await this._sqlite.addUpgradeStatement(this._dbName, {
+			// 		toVersion: item.version,
+			// 		statements: item.statements()
+			// 	});
+			const statements = [];
+			for (const item of this._upgrades) {
+				statements.push({
+					toVersion: item.version,
+					statements: item.statements()
+				});
+			}
+			await this._sqlite.addUpgradeStatement(this._dbName, statements);
+			// await this._sqlite.addUpgradeStatement(this._dbName, item.statements());
 
 			const ret = await this._sqlite.checkConnectionsConsistency();
 			// this._logger.debug('SqliteDatabaseImplementationService', 'init', `after checkConnectionsConsistency ${ret.result}`, null, correlationId);

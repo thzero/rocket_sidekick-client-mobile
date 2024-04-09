@@ -1,6 +1,6 @@
 import BaseUtilityDatabaseService from '@/service.app/database/utility';
 
-import LibraryCommonUtility from '@thzero/library_common/utility/index';
+import LibraryMomentUtility from '@thzero/library_common/utility/moment';
 
 class UtilityDatabaseService extends BaseUtilityDatabaseService {
 	constructor() {
@@ -28,7 +28,7 @@ class UtilityDatabaseService extends BaseUtilityDatabaseService {
 		this._enforceNotNull('UtilityDatabaseService', 'contentMarkupUpdate', content.locales, 'content.locales', correlationId);
 
 		let response = this._successResponse({}, correlationId);
-		let ttl = LibraryCommonUtility.getTimestamp() + this._ttlDefault;
+		let ttl = LibraryMomentUtility.getTimestamp() + this._ttlDefault;
 		let id;
 		for (const locale of content.locales) {
 			id = content.id + '-' + locale;
@@ -42,7 +42,7 @@ class UtilityDatabaseService extends BaseUtilityDatabaseService {
 	async contentUpdate(correlationId, content) {
 		this._enforceNotNull('UtilityDatabaseService', 'contentUpdate', content, 'content', correlationId);
 
-		let ttl = LibraryCommonUtility.getTimestamp() + this._ttlDefault;
+		let ttl = LibraryMomentUtility.getTimestamp() + this._ttlDefault;
 		const response = await this._serviceDatabase.upcert(correlationId, UtilityDatabaseService.TableNameContent, UtilityDatabaseService.IdContent, { json: JSON.stringify(content), ttl: ttl });
 		return response;
 	}
@@ -54,7 +54,7 @@ class UtilityDatabaseService extends BaseUtilityDatabaseService {
 	async initializeUpdate(correlationId, content) {
 		this._enforceNotNull('UtilityDatabaseService', 'initializeUpdate', content, 'content', correlationId);
 
-		let ttl = LibraryCommonUtility.getTimestamp() + this._ttlDefault;
+		let ttl = LibraryMomentUtility.getTimestamp() + this._ttlDefault;
 		const response = await this._serviceDatabase.upcert(correlationId, UtilityDatabaseService.TableNameInitialize, UtilityDatabaseService.IdInitialize, { json: JSON.stringify(content), ttl: ttl });
 		return response;
 	}
@@ -66,7 +66,7 @@ class UtilityDatabaseService extends BaseUtilityDatabaseService {
 	async openSourceUpdate(correlationId, content) {
 		this._enforceNotNull('UtilityDatabaseService', 'openSourceUpdate', content, 'content', correlationId);
 
-		let ttl = LibraryCommonUtility.getTimestamp() + this._ttlDefault;
+		let ttl = LibraryMomentUtility.getTimestamp() + this._ttlDefault;
 		const response = await this._serviceDatabase.upcert(correlationId, UtilityDatabaseService.TableNameOpenSource, UtilityDatabaseService.IdOpenSource, { json: JSON.stringify(content), ttl: ttl });
 		return response;
 	}

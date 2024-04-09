@@ -14,7 +14,7 @@
       "providers": ["google.com"]
     },
     "SplashScreen": {
-      "launchAutoHide": false
+      "launchAutoHide": true
     }
   },
   "server": {

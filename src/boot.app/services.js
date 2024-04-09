@@ -1,22 +1,25 @@
 import AppConstants from '@/constants';
 
 import authService from '@/service.app/auth';
-import checklistsService from '@/service.app/checklists';
-import databaseService from '@/service.app/database/implementation/sqlite/index';
 import checklistsDatabaseService from '@/service.app/database/implementation/sqlite/checklists';
+import checklistsService from '@/service.app/checklists';
+import countriesService from '@/service/countries';
+import databaseService from '@/service.app/database/implementation/sqlite/index';
+import featuresService from '@/service.app/features';
+import launchesService from '@/service/launches';
+import locationsService from '@/service/locations';
 import manufacturersDatabaseService from '@/service.app/database/implementation/sqlite/manufacturers';
+import manufacturersService from '@/service.app/manufacturers';
 import newsDatabaseService from '@/service.app/database/implementation/sqlite/news';
 import partsDatabaseService from '@/service.app/database/implementation/sqlite/parts';
-import utilityDatabaseService from '@/service.app/database/implementation/sqlite/utility';
-
-import featuresService from '@/service.app/features';
-import manufacturersService from '@/service.app/manufacturers';
 import partsService from '@/service.app/parts';
-import rocketsService from '@/service.app/rockets';
 import restCommunicationService from '@/service.app/interceptor';
+import rocketsService from '@/service.app/rockets';
+import rocketSetupsService from '@/service/rocketSetups';
 import newsService from '@/service.app/news';
 import userService from '@/service.app/user';
 import utilityService from '@/service.app/utility';
+import utilityDatabaseService from '@/service.app/database/implementation/sqlite/utility';
 import versionService from '@/service.app/version';
 
 import restCommunicationServiceSecondary from '@thzero/library_client_service_rest_fetch';
@@ -49,8 +52,20 @@ class AppServiceBoot extends BaseServiceBoot {
 		return new restCommunicationService();
 	}
 
+	_initializeCountries() {
+		return new countriesService();
+	}
+
 	_initializeFeatures() {
 		return new featuresService();
+	}
+
+	_initializeLaunches() {
+		return new launchesService();
+	}
+
+	_initializeLocations() {
+		return new locationsService();
 	}
 
 	_initializeNews() {
@@ -67,6 +82,10 @@ class AppServiceBoot extends BaseServiceBoot {
 
 	_initializeRockets() {
 		return new rocketsService();
+	}
+
+	_initializeRocketSetups() {
+		return new rocketSetupsService();
 	}
 
 	_initializeUser() {

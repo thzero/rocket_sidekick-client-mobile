@@ -1,9 +1,6 @@
 import AppConstants from '@/constants';
 
-// import LibraryClientConstants from '@thzero/library_client/constants';
-
-import LibraryClientUtility from '@thzero/library_client/utility/index';
-// import LibraryCommonUtility from '@thzero/library_common/utility/index';
+// import LibraryClientUtility from '@thzero/library_client/utility/index';
 
 import CommunicationService from '@thzero/library_client/service/communication';
 
@@ -43,7 +40,7 @@ class InterceptorCommunicationService extends CommunicationService {
 
 	async getById(correlationId, key, url, id, options) {
 		// if (LibraryClientUtility.online)
-			return await this._serviceRestCommunicationService.get(correlationId, key, url, id, options);
+			return await this._serviceRestCommunicationService.getById(correlationId, key, url, id, options);
 
 		// return null;
 	}
