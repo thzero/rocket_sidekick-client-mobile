@@ -1,5 +1,6 @@
 import AppConstants from '@/constants';
 
+import AppUtility from '@/utility/app';
 import LibraryClientUtility from '@thzero/library_client/utility/index';
 import LibraryCommonUtility from '@thzero/library_common/utility';
 import LibraryMomentUtility from '@thzero/library_common/utility/moment';

@@ -10,7 +10,7 @@ import { FirebaseAuthentication } from '@capacitor-firebase/authentication';
 // import LibraryClientConstants from '@thzero/library_client/constants';
 
 // import LibraryClientUtility from '@thzero/library_client/utility/index';
-import LibraryCommonUtility from '@thzero/library_common/utility';
+import LibraryMomentUtility from '@thzero/library_common/utility/moment';
 
 import FirebaseAuthService from '@thzero/library_client_firebase_vue/service/index';
 import Utility from '@thzero/library_common/utility';
@@ -104,7 +104,7 @@ class AppFirebaseAuthService extends FirebaseAuthService {
 			token: null,
 			// The @capacitor-firebase/authentication does not share any expiration time for the token
 			// Default it to current date time
-			expirationTime: LibraryCommonUtility.getDate()
+			expirationTime: LibraryMomentUtility.getDate()
 		}
 		const token = await FirebaseAuthentication.getIdToken({ forceRefresh: forceRefresh });
 		result.token = token ? token.token : null;
