@@ -33,7 +33,7 @@
     "@capacitor/network": "^5.0.7",
     "@capacitor/splash-screen": "^5.0.7",
     "@mdi/font": "^7.4.47",
-    "@thzero/library_client": "^0.18.5",
+    "@thzero/library_client": "^0.18.7",
     "@thzero/library_client_firebase": "^0.18.2",
     "@thzero/library_client_firebase_vue": "^0.18.2",
     "@thzero/library_client_service_rest_fetch": "^0.18.2",
