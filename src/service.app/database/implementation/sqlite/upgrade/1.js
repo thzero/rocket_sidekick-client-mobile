@@ -8,19 +8,18 @@ class UpgradeSqliteDatabaseScript_1 extends UpgradeSqliteDatabaseScript {
 	statements() {
 		return [
 			'CREATE TABLE IF NOT EXISTS checklists (identifier TEXT PRIMARY KEY, json TEXT, name TEXT, isDefault INTEGER DEFAULT 0, statusId TEXT, typeId TEXT, syncTimestamp INTEGER, deleted INTEGER DEFAULT 0)',
+			'CREATE TABLE IF NOT EXISTS content (identifier TEXT PRIMARY KEY, json TEXT, type TEXT, ttl INTEGER, deleted INTEGER DEFAULT 0)',
+			'CREATE TABLE IF NOT EXISTS initialize (identifier TEXT PRIMARY KEY, json TEXT, ttl INTEGER, deleted INTEGER DEFAULT 0)',
 			'CREATE TABLE IF NOT EXISTS launches (identifier TEXT PRIMARY KEY, json TEXT, name TEXT, syncTimestamp INTEGER, deleted INTEGER DEFAULT 0)',
 			'CREATE TABLE IF NOT EXISTS locations (identifier TEXT PRIMARY KEY, json TEXT, name TEXT, syncTimestamp INTEGER, deleted INTEGER DEFAULT 0)',
-			'CREATE TABLE IF NOT EXISTS manufacturers (identifier TEXT PRIMARY KEY, json TEXT, name TEXT, typeIds TEXT, syncTimestamp INTEGER, deleted INTEGER DEFAULT 0)',
-			'CREATE TABLE IF NOT EXISTS motors (identifier TEXT PRIMARY KEY, json TEXT, name TEXT, impulseClass TEXT, diameter INTEGER, singleUse INTEGER, sparky INTEGER, deleted INTEGER DEFAULT 0)',
+			'CREATE TABLE IF NOT EXISTS manufacturers (identifier TEXT PRIMARY KEY, json TEXT, name TEXT, typeIds TEXT, ttl INTEGER, syncTimestamp INTEGER, deleted INTEGER DEFAULT 0)',
+			'CREATE TABLE IF NOT EXISTS motors (identifier TEXT PRIMARY KEY, json TEXT, name TEXT, impulseClass TEXT, diameter INTEGER, singleUse INTEGER, sparky INTEGER, ttl INTEGER, syncTimestamp INTEGER, deleted INTEGER DEFAULT 0)',
+			'CREATE TABLE IF NOT EXISTS news (identifier TEXT PRIMARY KEY, json TEXT, ttl INTEGER, deleted INTEGER DEFAULT 0)',
+			'CREATE TABLE IF NOT EXISTS openSource (identifier TEXT PRIMARY KEY, json TEXT, ttl INTEGER, deleted INTEGER DEFAULT 0)',
 			'CREATE TABLE IF NOT EXISTS parts (identifier TEXT PRIMARY KEY, json TEXT, name TEXT, typeId TEXT, syncTimestamp INTEGER, deleted INTEGER DEFAULT 0)',
 			'CREATE TABLE IF NOT EXISTS rockets (identifier TEXT PRIMARY KEY, json TEXT, name TEXT, diameterMajor INTEGER NULL, typeId TEXT NULL, syncTimestamp INTEGER, deleted INTEGER DEFAULT 0)',
 			'CREATE TABLE IF NOT EXISTS users (identifier TEXT PRIMARY KEY, json TEXT, externalIdentifier TEXT, syncTimestamp INTEGER, deleted INTEGER DEFAULT 0)',
 			'CREATE TABLE IF NOT EXISTS ttl (identifier TEXT PRIMARY KEY, json TEXT)',
-
-			'CREATE TABLE IF NOT EXISTS content (identifier TEXT PRIMARY KEY, json TEXT, type TEXT, ttl INTEGER, deleted INTEGER DEFAULT 0)',
-			'CREATE TABLE IF NOT EXISTS initialize (identifier TEXT PRIMARY KEY, json TEXT, ttl INTEGER, deleted INTEGER DEFAULT 0)',
-			'CREATE TABLE IF NOT EXISTS news (identifier TEXT PRIMARY KEY, json TEXT, ttl INTEGER, deleted INTEGER DEFAULT 0)',
-			'CREATE TABLE IF NOT EXISTS openSource (identifier TEXT PRIMARY KEY, json TEXT, ttl INTEGER, deleted INTEGER DEFAULT 0)',
 
 			'CREATE INDEX IF NOT EXISTS checklists_identifier ON checklists (identifier ASC, deleted ASC)',
 			'CREATE INDEX IF NOT EXISTS checklists_search ON checklists (isDefault, statusId, typeId ASC, deleted ASC)',

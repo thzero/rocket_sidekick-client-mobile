@@ -6,7 +6,7 @@
 			<v-list-item-title>{{ $t('titles.home') }}</v-list-item-title>
 		</v-list-item>
 		<v-list-item
-			v-if="features.Rockets"
+			v-if="displayRockets"
 			prepend-icon="mdi-rocket"
 			to="/rockets"
 		>
@@ -303,18 +303,29 @@
 			<v-list-item-title>{{ $t('menu.content.links.title') }}</v-list-item-title>
 		</v-list-item> -->
 		<v-list-item
+			v-if="displayWebsite"
 			:href="websiteUrl"
 			target="_blank"
 		>
 			<v-list-item-title>{{ $t('menu.content.website') }}</v-list-item-title>
 		</v-list-item>
+		<v-list-item
+			v-if="!isOnline"
+		>
+			<v-list-item-title><span 
+				class="text-red"
+				style="font-weight: bold; text-transform: uppercase;"
+			>{{ $t('strings.offline') }}</span></v-list-item-title>
+		</v-list-item>
 	</v-list>
 </template>
 
 <script>
-import { ref } from 'vue';
+import { computed, ref } from 'vue';
 
 import AppSharedConstants from '@/utility/constants';
+
+import LibraryClientUtility from '@thzero/library_client/utility/index';
 
 import { useBaseMenuComponent } from '@/components/main/baseMenu';
 import { baseBaseMenuProps } from '@/components/main/baseBaseMenuProps';
@@ -345,6 +356,16 @@ export default {
 
 		const websiteUrl = ref(AppSharedConstants.External.url);
 
+		const displayRockets = computed(() => {
+			return LibraryClientUtility.$store.getters.getOnline() && features.value.Rockets;
+		});
+		const displayWebsite = computed(() => {
+			return LibraryClientUtility.$store.getters.getOnline();
+		});
+		const isOnline = computed(() => {
+			return LibraryClientUtility.$store.getters.getOnline();
+		});
+
 		return {
 			correlationId,
 			error,
@@ -361,7 +382,10 @@ export default {
 			isLoggedIn,
 			contentLink,
 			contentTitle,
-			websiteUrl
+			websiteUrl,
+			displayRockets,
+			displayWebsite,
+			isOnline
 		};
 	}
 };

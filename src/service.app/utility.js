@@ -26,9 +26,15 @@ class MobileUtilityService extends AppUtilityService {
 			if (this._hasFailed(response))
 				return response;
 
+			// if the local database has data check it for ttl...
 			if (!LibraryCommonUtility.isNull(response.results)) {
-				if (AppUtility.ttlDelta(response.results.ttl))
-					return this._successResponse(response.results.json, correlationId);
+				// are they online? if so refresh
+				let refresh = LibraryClientUtility.online;
+				// is the data old?
+				refresh |= AppUtility.ttlDelta(response.results.ttl);
+				// if no refresh, then return
+				if (!refresh)
+					return this._successResponse([], correlationId);
 			}
 
 			if (!LibraryClientUtility.online) {
@@ -66,9 +72,15 @@ class MobileUtilityService extends AppUtilityService {
 			if (this._hasFailed(response))
 				return response;
 
+			// if the local database has data check it for ttl...
 			if (!LibraryCommonUtility.isNull(response.results)) {
-				if (AppUtility.ttlDelta(response.results.ttl))
-					return this._successResponse(response.results.json, correlationId);
+				// are they online? if so refresh
+				let refresh = LibraryClientUtility.online;
+				// is the data old?
+				refresh |= AppUtility.ttlDelta(response.results.ttl);
+				// if no refresh, then return
+				if (!refresh)
+					return this._successResponse([], correlationId);
 			}
 
 			if (!LibraryClientUtility.online) {
@@ -106,9 +118,15 @@ class MobileUtilityService extends AppUtilityService {
 			if (this._hasFailed(response))
 				return response;
 
+			// if the local database has data check it for ttl...
 			if (!LibraryCommonUtility.isNull(response.results)) {
-				if (AppUtility.ttlDelta(response.results.ttl))
-					return this._successResponse(response.results.json, correlationId);
+				// are they online? if so refresh
+				let refresh = LibraryClientUtility.online;
+				// is the data old?
+				refresh |= AppUtility.ttlDelta(response.results.ttl);
+				// if no refresh, then return
+				if (!refresh)
+					return this._successResponse([], correlationId);
 			}
 
 			if (!LibraryClientUtility.online) {
@@ -151,9 +169,15 @@ class MobileUtilityService extends AppUtilityService {
 			if (this._hasFailed(response))
 				return response;
 
+			// if the local database has data check it for ttl...
 			if (!LibraryCommonUtility.isNull(response.results)) {
-				if (AppUtility.ttlDelta(response.results.ttl))
-					return this._successResponse(response.results.json, correlationId);
+				// are they online? if so refresh
+				let refresh = LibraryClientUtility.online;
+				// is the data old?
+				refresh |= AppUtility.ttlDelta(response.results.ttl);
+				// if no refresh, then return
+				if (!refresh)
+					return this._successResponse([], correlationId);
 			}
 
 			if (!LibraryClientUtility.online) {

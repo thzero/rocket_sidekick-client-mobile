@@ -1,10 +1,16 @@
-// import LibraryCommonUtility from '@thzero/library_common/utility';
+import LibraryMomentUtility from '@thzero/library_common/utility/moment';
 
 import NotImplementedError from '@thzero/library_common/errors/notImplemented';
 
 import BaseDatabaseService from '@/service.app/database/index';
 
 class BaseManufacturersDatabaseService extends BaseDatabaseService {
+	constructor() {
+		super();
+
+		this._ttlDefault = 60 * 60 * 1000;
+	}
+
 	async manufacturer(correlationId, id) {
 		throw NotImplementedError();
 	}
@@ -22,11 +28,14 @@ class BaseManufacturersDatabaseService extends BaseDatabaseService {
 	}
 
 	async _load(correlationId) {
+        LibraryMomentUtility.initDateTime();
+        const ttl = LibraryMomentUtility.getTimestamp() + this._ttlDefault;
 		for (const item of defaultData) {
-			this.manufacturersLoad(correlationId, item.id, {
+			await this.manufacturersLoad(correlationId, item.id, {
 				json: JSON.stringify(item),
 				name: item.name,
-				typeIds: item.types.join(',')
+				typeIds: item.types.join(','),
+                ttl: ttl
 			});
 		}
 	}

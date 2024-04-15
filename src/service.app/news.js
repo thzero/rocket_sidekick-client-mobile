@@ -1,6 +1,9 @@
 import AppConstants from '@/constants';
 
+import AppUtility from '@/utility/app';
+import LibraryClientUtility from '@thzero/library_client/utility/index';
 import LibraryCommonUtility from '@thzero/library_common/utility';
+import LibraryMomentUtility from '@thzero/library_common/utility/moment';
 
 import NewsService from '@thzero/library_client/service/news';
 
@@ -10,6 +13,7 @@ class MobileNewsService extends NewsService {
 
 		this._serviceDatabase = null;
 		this._ttl = 0;
+		this._ttlDefault = 30 * 60 * 1000;
 	}
 
 	async init(injector) {
@@ -18,16 +22,17 @@ class MobileNewsService extends NewsService {
 		this._serviceDatabase = this._injector.getService(AppConstants.InjectorKeys.SERVICE_DATABASE_NEWS);
 	}
 
-	async _latestCommunication(correlationId) {
+	async _latestCommunication(correlationId, params) {
 		try {
 			let response = await this._serviceDatabase.latest(correlationId);
 			this._logger.debug('MobileNewsService', '_latestCommunication', 'response.database', response, correlationId);
 			if (this._hasFailed(response))
 				return response;
 
+			// if the local database has data check it for ttl...
 			if (!LibraryCommonUtility.isNull(response.results)) {
-				// are they online? if so refresh if the online TTL has expried
-				let refresh = !LibraryClientUtility.online ? AppUtility.ttlDelta(this._ttl) : false;
+				// are they online? if so refresh
+				let refresh = LibraryClientUtility.online;
 				// is the data old?
 				refresh |= AppUtility.ttlDelta(response.results.ttl);
 				// if no refresh, then return
@@ -44,7 +49,7 @@ class MobileNewsService extends NewsService {
 			this._logger.debug('MobileNewsService', '_latestCommunication', 'response.external', response, correlationId);
 			if (this._hasFailed(response))
 				return response;
-			this._ttl = LibraryCommonUtility.getTimestamp() + 30 * 60 * 1000;
+			this._ttl = LibraryMomentUtility.getTimestamp() + this._ttlDefault;
 
 			// Update in the database the external...
 			const responseUpdate = await this._serviceDatabase.update(correlationId, response.results);

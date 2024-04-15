@@ -1,5 +1,6 @@
 import RocketsService from '@/service/rockets';
 
+
 class MobileRocketsService extends RocketsService {
 	constructor() {
 		super();
