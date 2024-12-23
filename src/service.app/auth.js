@@ -20,68 +20,68 @@ class AppFirebaseAuthService extends FirebaseAuthService {
 		await super.init(injector);
 	}
 
-	// initialize(correlationId, router) {
-	// 	const configExternal = this._config.getExternal();
-	// 	if (!configExternal)
-	// 		throw Error('Invalid external config.');
-	// 	const configFirebase = configExternal.firebase;
-	// 	if (!configFirebase)
-	// 		throw Error('Invalid firebase config.');
+	initialize(correlationId, router) {
+		const configExternal = this._config.getExternal();
+		if (!configExternal)
+			throw Error('Invalid external config.');
+		const configFirebase = configExternal.firebase;
+		if (!configFirebase)
+			throw Error('Invalid firebase config.');
 
-	// 	initializeApp(configFirebase);
-	// 	this._auth = initializeAuth(getApp(), {
-	// 		persistence: indexedDBLocalPersistence
-	// 	});
+		initializeApp(configFirebase);
+		this._auth = initializeAuth(getApp(), {
+			persistence: indexedDBLocalPersistence
+		});
 
-	// 	let outsideResolve;
-	// 	let outsideReject;
-	// 	const promiseAuth = new Promise(function(resolve, reject) {
-	// 		outsideResolve = resolve;
-	// 		outsideReject = reject;
-	// 	});
+		let outsideResolve;
+		let outsideReject;
+		const promiseAuth = new Promise(function(resolve, reject) {
+			outsideResolve = resolve;
+			outsideReject = reject;
+		});
 
-	// 	// FirebaseAuthentication listeners are only avaiable when using non-native JS SDK
-	// 	// but this is using the native Firebase SDK as the WebViews do not support popups for
-	// 	// authentication
-	// 	// FirebaseAuthentication.removeAllListeners().then(() => {
-	// 	// 	// doesn't seem to be fired from the native side, native side is firing the event.
-	// 	// 	FirebaseAuthentication.addListener('authStateChange', async (change) => {
-	// 	// 		try {
-	// 	// 			const auth = LibraryClientUtility.$injector.getService(LibraryClientConstants.InjectorKeys.SERVICE_AUTH);
-	// 	// 			await auth.onAuthStateChanged(user);
-	// 	// 		}
-	// 	// 		catch(ex) {
-	// 	// 			console.log('authStateChange', ex);
-	// 	// 		}
-	// 	// 	});
-	// 	// });
+		// FirebaseAuthentication listeners are only avaiable when using non-native JS SDK
+		// but this is using the native Firebase SDK as the WebViews do not support popups for
+		// authentication
+		// FirebaseAuthentication.removeAllListeners().then(() => {
+		// 	// doesn't seem to be fired from the native side, native side is firing the event.
+		// 	FirebaseAuthentication.addListener('authStateChange', async (change) => {
+		// 		try {
+		// 			const auth = LibraryClientUtility.$injector.getService(LibraryClientConstants.InjectorKeys.SERVICE_AUTH);
+		// 			await auth.onAuthStateChanged(user);
+		// 		}
+		// 		catch(ex) {
+		// 			console.log('authStateChange', ex);
+		// 		}
+		// 	});
+		// });
 
-	// 	// https://github.com/capawesome-team/capacitor-firebase/issues/159#issuecomment-1194667877
-	// 	// get reference to the Firebase auth state change.
-	// 	// https://firebase.google.com/docs/auth/web/manage-users#web-version-9
-	// 	// does not seem to work, or at least it does not fire when a user authenticates
-	// 	// onAuthStateChanged(this._auth, (user) => {
-	// 	// 	try {
-	// 	// 		const auth = LibraryClientUtility.$injector.getService(LibraryClientConstants.InjectorKeys.SERVICE_AUTH);
-	// 	// 		await auth.onAuthStateChanged(user);
-	// 	// 	}
-	// 	// 	catch(ex) {
-	// 	// 		console.log('onAuthStateChanged', ex);
-	// 	// 	}
-	// 	// });
+		// https://github.com/capawesome-team/capacitor-firebase/issues/159#issuecomment-1194667877
+		// get reference to the Firebase auth state change.
+		// https://firebase.google.com/docs/auth/web/manage-users#web-version-9
+		// does not seem to work, or at least it does not fire when a user authenticates
+		// onAuthStateChanged(this._auth, (user) => {
+		// 	try {
+		// 		const auth = LibraryClientUtility.$injector.getService(LibraryClientConstants.InjectorKeys.SERVICE_AUTH);
+		// 		await auth.onAuthStateChanged(user);
+		// 	}
+		// 	catch(ex) {
+		// 		console.log('onAuthStateChanged', ex);
+		// 	}
+		// });
 
-	// 	const self = this;
-	// 	(async () => {
-	// 		// const userResult = await FirebaseAuthentication.getCurrentUser();
-	// 		const user = await self.getExternalUser();
-	// 		if (await this.isAuthenticated()) {}
-	// 			this.updateExternalUser(correlationId, user);
+		const self = this;
+		(async () => {
+			// const userResult = await FirebaseAuthentication.getCurrentUser();
+			const user = await self.getExternalUser();
+			if (await this.isAuthenticated()) {}
+				this.updateExternalUser(correlationId, user);
 
-	// 		outsideResolve(true);
-	// 	})();
+			outsideResolve(true);
+		})();
 
-	// 	return promiseAuth;
-	// }
+		return promiseAuth;
+	}
 
 	async getExternalUser() {
 		const userResult = await FirebaseAuthentication.getCurrentUser();

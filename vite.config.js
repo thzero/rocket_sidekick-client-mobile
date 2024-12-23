@@ -1,6 +1,8 @@
 // Plugins
 import vue from '@vitejs/plugin-vue'
 import vuetify from 'vite-plugin-vuetify'
+import basicSsl from '@vitejs/plugin-basic-ssl'
+import mkcert from 'vite-plugin-mkcert'
 import { splitVendorChunkPlugin } from 'vite'
 
 import { manualChunksPlugin } from 'vite-plugin-webpackchunkname'
@@ -66,6 +68,8 @@ export default defineConfig({optimizeDeps: {
     force: configEnv === 'development'
   },
   plugins: [
+    // basicSsl(),
+    // mkcert(),
     vue(),
     // https://github.com/vuetifyjs/vuetify-loader/tree/next/packages/vite-plugin
     vuetify({
