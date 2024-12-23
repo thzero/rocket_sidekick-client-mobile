@@ -6,6 +6,11 @@ Issues
         Generally an issue in the browser SplashScreen
 
 Debugging
+    Set IP address
+        Make sure to set the 'baseUrl' in 'src\config\development.json' to your local IP address, not localhost, for the API.
+        Make sure to set the 'server.url' in 'capacitor.config.json.debug' to your local IP address, not localhost.
+        Make sure to set the 'includeSubdomains' in 'network_security_config.xml' to your local IP address, not localhost.
+
     https://developer.chrome.com/docs/devtools/remote-debugging/webviews/
     run chrome://inspect
     To start debugging, click inspect below the WebView you want to debug. 
